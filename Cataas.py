@@ -17,6 +17,7 @@ def load_image(url):
 
         # Открываем изображение с помощью PIL
         img = Image.open(image_data)
+        img.thumbnail((600, 480), Image.Resampling.LANCZOS)
         return ImageTk.PhotoImage(img)
     except Exception as e:
         print(f"Ошибка при загрузке изображения: {e}")
